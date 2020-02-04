@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+
 mongoose.Promise = Promise;
 
 module.exports = (uri) => {
-	
+
 	mongoose.connect(uri);
 	const conn = mongoose.connection;
 	

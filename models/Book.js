@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-// var mongoosePaginate = require('mongoose-paginate');
 
 var schema = mongoose.Schema({
     name: { 
@@ -20,7 +19,5 @@ var schema = mongoose.Schema({
     }
 
 });
-
-// schema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model('Book', schema);

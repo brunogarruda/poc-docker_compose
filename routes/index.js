@@ -1,11 +1,17 @@
 var express = require('express');
-const mongoose = require('mongoose');
-var router = express.Router();
-require('marko/node-require').install()// Habilita o uso do template Marko
-require('marko/express')
-let Book = require('../models/Book')
-var indexTemplate = require('../views/index.marko')
 
+const mongoose = require('mongoose');
+
+var router = express.Router();
+
+// Habilita o uso do template Marko
+require('marko/node-require').install()
+
+require('marko/express')
+
+let Book = require('../models/Book')
+
+var indexTemplate = require('../views/index.marko')
 
 // Busca a página e carrega os livros
 router.get('/', (req, res) => {

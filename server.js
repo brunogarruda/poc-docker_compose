@@ -1,13 +1,16 @@
 const express = require('express')
 let app = express()
 let routes = require('./routes')
+
 //Detecta enviroment
 let env = process.env.NODE_ENV;
 if(!env){
 	env = 'development'
 }
+
 // Carrega configurações de acordo
 let config = require(`./config/config.${env}.json`);
+
 //Conecta ao banco
 require('./database')(`mongodb://${config.databaseConfig.host}:27017/${config.databaseConfig.database}`)
 
